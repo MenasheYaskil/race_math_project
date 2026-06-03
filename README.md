@@ -1,82 +1,96 @@
-# Math Race / Innovative Learning Race
+<div dir="rtl" align="right">
 
-A real-time, interactive, gamified math racing game. Students answer math questions to progress on a visual race track, utilizing dynamic decision meters, branching paths (Highway / Dirt Road), and freeze/hint mechanics. Teachers create, start, and monitor races live via an SSE-powered real-time dashboard.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="80" height="80" alt="React Logo" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="80" height="80" alt="Java Logo" />
+</p>
 
----
+<h1 align="center">🏎️ MATH RACE - מרוץ הלמידה הגדול</h1>
 
-## 🛠️ Tech Stack & Requirements
+<p align="center">
+  <b>הופכים את לימודי המתמטיקה לחוויית מולטיפלייר תחרותית וסוחפת בזמן אמת! 🏁</b>
+</p>
 
-### Backend
-* **Language & Framework:** Java 17, Spring Boot 3.1.2
-* **Build Tool:** Maven 3.x
-* **Database:** In-memory H2 Database (with pre-seeded math templates and teacher credentials)
-* **API / Real-time:** REST APIs + Server-Sent Events (SSE)
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java 17" />
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
+</p>
 
-### Frontend
-* **Core:** React, Javascript
-* **Build Tool & Dev Server:** Vite
-* **Styling:** Premium Vanilla CSS (neon gradients, responsive layouts, glassmorphism animations)
+<br />
 
----
+## 🚀 על הפרויקט
 
-## 🚀 Run Instructions
+**MATH RACE** היא פלטפורמה חינוכית מהדור החדש, המשלבת למידה אקדמית עם משחקיות מתגמלת (Gamification). הפרויקט לוקח את המשימה השגרתית של פתרון תרגילי מתמטיקה והופך אותה למרוץ מכוניות מלא אדרנלין. 
 
-### 1. Backend Service
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Build and compile the project:
-   ```bash
-   mvn clean compile
-   ```
-3. Start the Spring Boot application:
-   ```bash
-   mvn spring-boot:run
-   ```
-* The backend will run on **`http://localhost:8080`**.
-* The **H2 Console** is accessible at `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:testdb`, Username: `sa`, Password: *empty*).
-* A default teacher account is pre-seeded:
-  * **Username:** `teacher`
-  * **Password:** `password123`
+השחקנים מתחרים זה בזה במסלול מרוצים רווי אקשן בעיצוב **רטרו-ניאון**, כאשר ההתקדמות, המהירות והניצחון תלויים ביכולתם לפתור תרגילים באופן מהיר ומדויק אל מול אתגרים, בחירות נתיב ואירועי מזל מפתיעים.
 
-### 2. Frontend Client
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies (if not already done):
-   ```bash
-   npm install
-   ```
-3. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
-* The frontend client will run on **`http://localhost:5173`** (or another port as displayed in your terminal).
-* To compile a production-ready bundle, run:
-   ```bash
-   npm run build
-   ```
+### 👨‍💻 צוות הפיתוח
+הפרויקט פותח ועוצב מאפס על ידי צוות שתמיד מכוון להכי גבוה שיש (עם הרבה חוש הומור בדרך):
+* **מנשה ישכיל** (Lead Full-Stack Developer)
+* **דוד מאיר כהן** (Full-Stack Developer)
+* **אברהם רייס** (Full-Stack Developer)
 
 ---
 
-## 🏁 Manual Demo Checklist
+## ✨ פיצ'רים מרכזיים
 
-Follow these steps to experience the full interactive product flow:
+* ⏱️ **מולטיפלייר בזמן אמת (Real-Time):** טכנולוגיית **SSE (Server-Sent Events)** מבטיחה סנכרון חלק ומיידי של מיקומי הרכבים, מצב המרוץ והניקוד של כל המשתתפים ללא ריענון עמוד.
+* 🧠 **מחולל שאלות דינמי (Dynamic Generator):** מנוע אלגוריתמי המייצר שאלות מתמטיות בזמן אמת כדי להבטיח גיוון מוחלט – שום מרוץ אינו זהה לקודמו.
+* 🎲 **אירועי מזל ופיצולים (Branching & Luck):** אסטרטגיה היא חלק מהמשחק. בחירת נתיבים במסלול והתמודדות עם הפתעות קוד משנות את הדינמיקה והחוקים תוך כדי תנועה.
+* 🎨 **עיצוב ארקייד-ניאון (Neon UI):** חוויית משתמש (UX/UI) עוצרת נשימה עם רכבים מותאמים אישית, רקעי ניאון מונפשים, פופ-אפים ואפקטים ויזואליים עשירים.
+* 👨‍🏫 **דשבורד מורה (Teacher Dashboard):** פאנל ניהול מתקדם למורים המאפשר פתיחת חדרים, הגדרת פרמטרים למרוץ, ומעקב אחר תוצאות והתקדמות התלמידים ב-Leaderboard המפורט.
 
-- [ ] **Step 1:** Start the Spring Boot backend (`mvn spring-boot:run`).
-- [ ] **Step 2:** Start the Vite frontend dev server (`npm run dev`).
-- [ ] **Step 3:** Open your browser and navigate to `http://localhost:5173/teacher/login`.
-- [ ] **Step 4:** Log in using username **`teacher`** and password **`password123`**.
-- [ ] **Step 5:** Create a new race by setting a name and clicking **"Create Race"**. Note the generated **Room Code**.
-- [ ] **Step 6:** In a separate browser window or an Incognito tab, go to `http://localhost:5173/student/join`.
-- [ ] **Step 7:** Enter the **Room Code** and a nickname, and click **"Join"** to join the lobby.
-- [ ] **Step 8:** Confirm that the student's nickname immediately appears on the teacher's lobby screen in real-time.
-- [ ] **Step 9:** Click **"Start Race"** from the teacher's lobby page.
-- [ ] **Step 10:** On the student page, answer math questions as they arrive. Verify that answering correctly advances the student's racer on the shared track.
-- [ ] **Step 11:** Verify the teacher's live dashboard (`/teacher/dashboard/<id>`) receives real-time progress updates via SSE.
-- [ ] **Step 12:** Click **"Finish Race"** from the teacher's dashboard.
-- [ ] **Step 13:** Confirm both screens transition to their respective **Results / Leaderboard** screens, displaying correct participant standings.
-"# math_race_project" 
-"# race_math_project" 
+---
+
+## 🛠️ ארכיטקטורה וטכנולוגיות
+
+המערכת פותחה בארכיטקטורת **Client-Server** מודרנית, תוך הקפדה על קוד נקי, מודולריות, והפרדת עניינים (Separation of Concerns):
+
+### 🖥️ צד לקוח (Frontend)
+* מבוסס על **React.js** תוך שימוש ב-**Vite** לזמני טעינה וביצועים מקסימליים.
+* בנוי מקומפוננטות UI מודולריות (כגון `RaceTrack`, `QuestionCard`, `TimerDisplay`).
+* עיצוב מבוסס CSS טהור עם משתני סביבה מתקדמים לאפקטי הניאון הייחודיים.
+
+### ⚙️ צד שרת (Backend)
+* כתוב ב-**Java 17** בשילוב התשתית העוצמתית של **Spring Boot**.
+* לוגיקת משחק מורכבת מנוהלת דרך Services ייעודיים (`ScoringService`, `LuckEventService`, `BranchingService`).
+* עבודה מול בסיס נתונים באמצעות **Hibernate / JPA**.
+* ניהול תעבורת רשת רציפה (Broadcasting) למספר רב של קליינטים בו-זמנית בעזרת `SseConnectionManager`.
+
+---
+
+## 🏁 הרצה מקומית (Getting Started)
+
+כדי להתקין ולהריץ את הפרויקט על סביבת הפיתוח המקומית שלכם, עקבו אחר השלבים הבאים:
+
+### דרישות מערכת
+* `Java JDK 17+`
+* `Node.js (v18+)` & `npm`
+* `Maven`
+
+### 1. הרצת צד השרת (Backend)
+פתחו את הטרמינל, נווטו לתיקיית הפרויקט והריצו:
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
+*(השרת יאזין כברירת מחדל על פורט 3000)*
+
+### 2. הרצת צד הלקוח (Frontend)
+בטרמינל נפרד, הריצו את הפקודות הבאות:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*(היכנסו לכתובת `http://localhost:xxxx` בדפדפן והתחילו להתחרות!)*
+
+---
+<p align="center">
+  <b>פותח באהבה ובקוד פתוח 💻 | פרויקט MATH RACE 2026 ©</b>
+</p>
+
+</div>

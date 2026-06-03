@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.innovativelearning.entities">
+
+    <class name="UserEntity" table="users">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="role" column="role" type="string"/>
+        <property name="displayName" column="display_name" type="string"/>
+        <property name="loginName" column="login_name" type="string"/>
+        <property name="passwordHash" column="password_hash" type="string"/>
+        <property name="token" column="token" type="string"/>
+        <property name="active" column="active" type="boolean"/>
+        <property name="createdAt" column="created_at" type="long"/>
+    </class>
+
+    <class name="RaceEntity" table="races">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="roomCode" column="room_code" type="string"/>
+        <property name="teacherUserId" column="teacher_user_id" type="long"/>
+        <property name="title" column="title" type="string"/>
+        <property name="status" column="status" type="string"/>
+        <property name="maxParticipants" column="max_participants" type="int"/>
+        <property name="trackLength" column="track_length" type="int"/>
+        <property name="startedAt" column="started_at" type="long"/>
+        <property name="endedAt" column="ended_at" type="long"/>
+        <property name="winnerUserId" column="winner_user_id" type="long"/>
+        <property name="createdAt" column="created_at" type="long"/>
+    </class>
+
+    <class name="RaceParticipantEntity" table="race_participants">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="raceId" column="race_id" type="long"/>
+        <property name="userId" column="user_id" type="long"/>
+        <property name="joinOrder" column="join_order" type="int"/>
+        <property name="position" column="position" type="int"/>
+        <property name="points" column="points" type="int"/>
+        <property name="decisionMeter" column="decision_meter" type="int"/>
+        <property name="speedMultiplier" column="speed_multiplier" type="double"/>
+        <property name="freezeUntil" column="freeze_until" type="long"/>
+        <property name="difficultyLevel" column="difficulty_level" type="int"/>
+        <property name="dirtRoadQuestionsLeft" column="dirt_road_questions_left" type="int"/>
+        <property name="consecutiveNoProgressCount" column="consecutive_no_progress_count" type="int"/>
+        <property name="consecutiveWrongCount" column="consecutive_wrong_count" type="int"/>
+        <property name="correctStreakAtLevel" column="correct_streak_at_level" type="int"/>
+        <property name="wrongStreakAtLevel" column="wrong_streak_at_level" type="int"/>
+        <property name="speedMultiplierUntil" column="speed_multiplier_until" type="long"/>
+        <property name="lastDecisionMeterUpdate" column="last_decision_meter_update" type="long"/>
+        <property name="isBehindEligible" column="is_behind_eligible" type="boolean"/>
+        <property name="finished" column="finished" type="boolean"/>
+        <property name="finishRank" column="finish_rank" type="int"/>
+        <property name="lastActionAt" column="last_action_at" type="long"/>
+        
+        <property name="currentState" column="current_state">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.innovativelearning.enums.ParticipantState</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        <property name="activeLuckMultiplier" column="active_luck_multiplier" type="double"/>
+        <property name="questionsAnsweredInCurrentState" column="questions_answered_in_current_state" type="int"/>
+    </class>
+
+    <class name="QuestionTemplateEntity" table="question_templates">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="subject" column="subject" type="string"/>
+        <property name="templateType" column="template_type" type="string"/>
+        <property name="operator" column="operator" type="string"/>
+        <property name="difficulty" column="difficulty" type="int"/>
+        <property name="minValue" column="min_value" type="int"/>
+        <property name="maxValue" column="max_value" type="int"/>
+        <property name="baseTimeSeconds" column="base_time_seconds" type="int"/>
+        <property name="isActive" column="is_active" type="boolean"/>
+        
+        <property name="templateFamily" column="template_family" type="string"/>
+        <property name="logicTag" column="logic_tag" type="string"/>
+        <property name="antiRepeatGroup" column="anti_repeat_group" type="string"/>
+        <property name="difficultyBand" column="difficulty_band" type="int"/>
+        <property name="branchCompatibility" column="branch_compatibility" type="string"/>
+        <property name="stepsCount" column="steps_count" type="int"/>
+        <property name="allowsDecimal" column="allows_decimal" type="boolean"/>
+        <property name="maxDecimalPlaces" column="max_decimal_places" type="int"/>
+    </class>
+
+    <class name="RaceQuestionEntity" table="race_questions">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="raceId" column="race_id" type="long"/>
+        <property name="participantId" column="participant_id" type="long"/>
+        <property name="templateId" column="template_id" type="long"/>
+        <property name="questionText" column="question_text" type="string"/>
+        <property name="correctAnswer" column="correct_answer" type="string"/>
+        <property name="difficulty" column="difficulty" type="int"/>
+        <property name="branchType" column="branch_type" type="string"/>
+        <property name="issuedAt" column="issued_at" type="long"/>
+        <property name="expiresAt" column="expires_at" type="long"/>
+        <property name="answeredAt" column="answered_at" type="long"/>
+        <property name="isAnswered" column="is_answered" type="boolean"/>
+        <property name="wasCorrect" column="was_correct" type="boolean"/>
+        <property name="helpUsed" column="help_used" type="string"/>
+        
+        <property name="optionsJson" column="options_json" type="string"/>
+        <property name="correctOptionId" column="correct_option_id" type="int"/>
+        <property name="fingerprint" column="fingerprint" type="string"/>
+        <property name="status" column="status" type="string"/>
+    </class>
+
+</hibernate-mapping>
